@@ -1,0 +1,19 @@
+---
+# reboot.yml
+
+- hosts: all
+
+  tasks:
+    - name: reboot host
+      shell: /sbin/reboot
+      become: true
+
+    - name: waiting for server booting up
+      local_action: wait_for
+      args:
+        host: '{{ inventory_hostname }}'
+        port: 22
+        delay: 30
+        timeout: 300
+        state: started
+      become: false
