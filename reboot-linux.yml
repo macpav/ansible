@@ -11,7 +11,7 @@
     - name: waiting for server booting up
       local_action: wait_for
       args:
-        host: '{{ inventory_hostname }}'
+        host: "{{ inventory_hostname }}"
         port: 22
         delay: 30
         timeout: 300
