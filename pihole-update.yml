@@ -9,11 +9,8 @@
       become: true
 
     - name: waiting for server booting up
-      local_action: wait_for
-      args:
-        host: "{{ inventory_hostname }}"
-        port: 22
-        delay: 30
-        timeout: 300
+  wait_for:
+    path: /tmp/foo
+    search_regex: "[✓] Everything is up to date!"
         state: started
 become: false
