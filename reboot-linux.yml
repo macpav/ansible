@@ -5,16 +5,16 @@
 
   tasks:
   - name: Restart machine
-  shell: /sbin/reboot
-  async: 1
-  poll: 0
+      shell: /sbin/reboot
+      async: 1
+      poll: 0
 
-- name: wait for ssh again available.
-  wait_for_connection:
-    connect_timeout: 20
-    sleep: 5
-    delay: 5
-    timeout: 300
+  - name: wait for ssh again available.
+    wait_for_connection:
+      connect_timeout: 20
+      sleep: 5
+      delay: 5
+      timeout: 300
   
   
   
