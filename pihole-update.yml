@@ -12,6 +12,6 @@
 
       
     - debug: 
-      failed_when: "'Everything is mup to date' in out.stdout"
-#    msg: "{{out.stdout}}"
+      failed_when: "'error' in out.stdout"
+      #failed_when: "'Everything is mup to date' in out.stdout"
 
