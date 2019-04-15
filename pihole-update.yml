@@ -7,6 +7,7 @@
     - name: pihole update
       shell: pihole -up
       register: out
-      failed_when: "'  [✓] Everything is up to date!' in out.stderr_lines"
+      # failed_when: "'Everything is up to date' in out.stderr_lines"
+      failed_when:out.stdout.find('Everything is up to date') != -1
     - debug: var=out.stdout
 
