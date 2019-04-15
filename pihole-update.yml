@@ -7,6 +7,6 @@
     - name: pihole update
       shell: pihole -up
       register: out
-
+      failed_when:  "'hi' in out.stdout_lines"
     - debug: var=out.stdout_lines
 
