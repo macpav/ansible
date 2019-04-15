@@ -8,5 +8,5 @@
       shell: pihole -up
       register: out
       failed_when: "'  [✓] Everything is up to date!' in out.stderr_lines"
-    - debug: var=out.stdout_lines
+    - debug: var=out.stdout
 
