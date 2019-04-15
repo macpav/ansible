@@ -9,8 +9,9 @@
       register: out
       # failed_when: "'Everything is up to date' in out.stderr_lines"
       #when: "'Everything is up to date' in out.stdout"
-      when: "'Everything is up to date' in out.stdout"
+
       
-# - debug: 
+    - debug: 
+      when: "'Everything is up to date' in out.stdout"
 #    msg: "{{out.stdout}}"
 
