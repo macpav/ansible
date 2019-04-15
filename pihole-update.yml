@@ -6,11 +6,7 @@
   tasks:
     - name: pihole update
       shell: pihole -up
-      become: true
+      register: out
 
-    - name: waiting for server booting up
-      wait_for:
-        path: /tmp/foo
-        search_regex: Everything is up to date
-        state: drained
+    - debug: var=out.stdout_lines
 
