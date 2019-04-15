@@ -10,6 +10,7 @@
       # failed_when: "'Everything is up to date' in out.stderr_lines"
       #failed_when:out.stdout.find('Everything is up to date') != -1
       #when: "'Everything is up to date' in out.stdout"
+      when: "'Everything is up to date' in out"
     - debug: 
        msg: "{{out.stdout}}"
 
