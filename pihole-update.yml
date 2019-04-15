@@ -9,9 +9,8 @@
       become: true
 
     - name: waiting for server booting up
-      local_action: wait_for:
-         args:
-            path: /tmp/foo
-            search_regex: "[✓] Everything is up to date!"
-            state: started
-      become: false
+      wait_for:
+        path: /tmp/foo
+        search_regex: Everything is up to date
+        state: drained
+
