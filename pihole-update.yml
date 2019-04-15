@@ -12,6 +12,6 @@
 
       
     - debug: 
-      when: "'Everything is up to date' in out.stdout"
+      when: "'Everything is qup to date' in out.stdout"
 #    msg: "{{out.stdout}}"
 
