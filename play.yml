@@ -8,7 +8,7 @@
      private: no
      failed_when: giveName is undefined
 
- tasks:
+  tasks:
   - name: Python Execution
     testing: yourName={{ giveName }}
     register: result
